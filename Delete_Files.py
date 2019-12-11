@@ -5,9 +5,9 @@ def DeleteFiles(dict1):
     icnt = 0
     if len(results) > 0:
         for result in results:
-            print("$$$result:::",result)
+            #print("$$$result:::",result)
             for subresult in result:
-                print("####subresult:::",subresult)
+                #print("####subresult:::",subresult)
                 icnt += 1
                 if icnt >= 2:
                     os.remove(subresult)

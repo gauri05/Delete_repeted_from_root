@@ -10,18 +10,17 @@ def main():
     print("Delete repeted files from root..........")
     print("Application name:" + sys.argv[0])
 
-    if len(sys.argv) != 2:
-        print("Error : Invalid number of arguments")
-        exit()
-    if sys.argv[1] == "-h" or sys.argv[1] == "_H":
-        print("This Script is used to traverse specific diretory and display checksum of files")
-        exit()
-    if sys.argv[1] == "-u" or sys.argv[1] == "-U":
-        print("Usage : Applicationname AbsolutePath_of_Directory Extention")
-        exit()
+    # if len(sys.argv) != 2:
+    #     print("Error : Invalid number of arguments")
+    #     exit()
+    # if sys.argv[1] == "-h" or sys.argv[1] == "_H":
+    #     print("This Script is used to traverse specific diretory and display checksum of files")
+    #     exit()
+    # if sys.argv[1] == "-u" or sys.argv[1] == "-U":
+    #     print("Usage : Applicationname AbsolutePath_of_Directory Extention")
+    #     exit()
     try:
         brr = {}
-        arr = {}
         startTime = time.time()
         #os.getpid()
         #print("OS getpid",os.path.abspath(''))
@@ -36,6 +35,7 @@ def main():
 
         #my_path = pathlib.Path(pathlib.Path.home())  # this is work on windows as well as linux
         #print("my_path",my_path.drive)
+        arr = {}
         arr = Find_dup_files.findDup(home.drive)
         print("arr===",arr)
         #Delete_Files.DeleteFiles(arr)
@@ -43,9 +43,6 @@ def main():
 
         print('Took %s seconds to evaluate.' % (endTime - startTime))
 
-
-    except ValueError:
-        print("Error : Invalid datatype of input")
     except Exception as E:
         print("Error : Invalid input", E)
     # file.close()
